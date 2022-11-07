@@ -22,7 +22,7 @@ const SampleConfirmPopup = () => {
               <Button className="edit-button" variant="warning">Edit</Button>
             </Col>
             <Col>
-              <Button className="submit-button" variant="success" onSubmit={() => {submitSampleScope()}}>Submit</Button>
+              <Button className="submit-button" variant="success" href="/sample/removeitems" onSubmit={() => {submitSampleScope()}}>Submit</Button>
             </Col>
           </Row>
         </Card.Body>

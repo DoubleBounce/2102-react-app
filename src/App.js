@@ -11,9 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 //External files
 import scopeData from "./db/scopes.json"
 import SampleScope from './sampling/SampleScope';
-import ScanScope from './sampling/ScanScope';
-
-// const staffDetailsContext = createContext()
+import RemoveItemsPage from './sampling/RemoveItemsPage';
 
 const App = () => {
   useEffect(() => {
@@ -48,6 +46,7 @@ const App = () => {
           <Route path="/sample/employeedetails" element={<SampleScope />} />
           <Route path="/sample/scanscope" element={<SampleScope />} />
           <Route path="/sample/confirmation" element={<SampleScope />} />
+          <Route path="/sample/removeitems" element={<RemoveItemsPage />} />
           <Route path="/schedule" element={<TodaySchedule />} />
           <Route path="/status" element={<ScopeStatus />} />
         </Routes>

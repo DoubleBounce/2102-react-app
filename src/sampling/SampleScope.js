@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+
 import NavigationBar from '../components/NavigationBar'
-import { Container, Row, Col, Form, Card, Button } from 'react-bootstrap'
 import EmployeeDetails from '../components/EmployeeDetails'
 import ScanTagsInstructions from '../components/ScanTagsInstructions'
 import ScopeDetails from '../components/ScopeDetails'
@@ -8,6 +9,8 @@ import ScanScopeInstructions from '../components/ScanScopeInstructions'
 
 const SampleScope = () => {
   const [staffDetails, setDetails] = useState(JSON.parse(localStorage.getItem('staffDetails')))
+  const [scanningDetails, setScanningDetails] = useState(JSON.parse(localStorage.getItem('scanningDetails')))
+
   const populateStaffDetails = (evt) => {
     evt.target.classList[0] === "staff-button" && setDetails({ ...staffDetails, staffId: "S1234", staffName: "Ryan Lim" })
     evt.target.classList[0] === "assistant-button" && setDetails({ ...staffDetails, assistantId: "A1534", assistantName: "Juleus Seah" })
@@ -20,12 +23,6 @@ const SampleScope = () => {
     updatedValue.includes("assistantIdInput") && setDetails({ ...staffDetails, assistantId: evt.target.value })
     updatedValue.includes("assistantNameInput") && setDetails({ ...staffDetails, assistantName: evt.target.value })
   }
-
-  useEffect(() => {
-    localStorage.setItem("staffDetails", JSON.stringify(staffDetails))
-  }, [staffDetails])
-
-  const [scanningDetails, setScanningDetails] = useState(JSON.parse(localStorage.getItem('scanningDetails')))
   const populateScanningDetails = (evt) => {
     const nowDate = new Date()
     const year = nowDate.getFullYear()
@@ -34,9 +31,9 @@ const SampleScope = () => {
     const hour = nowDate.getHours()
     const min = nowDate.getMinutes()
     const sec = nowDate.getSeconds()
-
     const formattedDate = date + "/" + month + "/" + year
     const formattedTime = hour + ":" + min + ":" + sec + " (24 hour)"
+
     evt.target.classList[0] === "scope-placed-button" 
     && (
       setScanningDetails({ 
@@ -59,6 +56,10 @@ const SampleScope = () => {
     updatedValue.includes("modelInput") && setScanningDetails({ ...scanningDetails, model: evt.target.value })
     updatedValue.includes("serialNoInput") && setScanningDetails({ ...scanningDetails, serialNo: evt.target.value })
   }
+
+  useEffect(() => {
+    localStorage.setItem("staffDetails", JSON.stringify(staffDetails))
+  }, [staffDetails])
 
   useEffect(() => {
     localStorage.setItem("scanningDetails", JSON.stringify(scanningDetails))

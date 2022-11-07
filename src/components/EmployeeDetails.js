@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import NavigationBar from '../components/NavigationBar'
-import { Container, Row, Col, Form, Card, Button } from 'react-bootstrap'
+import React from 'react'
+import { Row, Col, Form } from 'react-bootstrap'
 import SampleConfirmPopup from './SampleConfirmPopup'
 
 const EmployeeDetails = ({staffDetails, updateDetails}) => {

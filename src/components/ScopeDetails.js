@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import NavigationBar from './NavigationBar'
-import { Container, Row, Col, Form, Card, Button } from 'react-bootstrap'
+import React from 'react'
+import { Row, Col, Form, Card, Button } from 'react-bootstrap'
 
 const ScopeDetails = ({ scanningDetails, updateScanningDetails, populateScanningDetails }) => {
   return (
