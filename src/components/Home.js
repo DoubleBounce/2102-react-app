@@ -24,7 +24,7 @@ const Home = () => {
             <Button variant="success" href="/schedule">Scopes scheduled for Today</Button>
           </Col>
           <Col className='text-center'>
-            <Button variant="success" href="/status">Status of Sampled Scopes</Button>
+            <Button variant="success" href="/status">Status of All Scopes</Button>
           </Col>
         </Row>
       </Container>
