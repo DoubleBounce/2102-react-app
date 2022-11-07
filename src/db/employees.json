@@ -1,0 +1,26 @@
+[
+    {
+        "id": "A1534",
+        "name": "Juleus Seah",
+        "type": "Assistant"
+    },
+    {
+        "id": "S1234",
+        "name": "Ryan Lim",
+        "type": "Staff"
+    },
+    {
+        "id": "S5678",
+        "name": "Tan Chun Boon",
+        "type": "Staff"
+    }, {
+        "id": "A2814",
+        "name": "Chee Kang Chen",
+        "type": "Assistant"
+    },
+    {
+        "id": "S1346",
+        "name": "Liu Jun",
+        "type": "Staff"
+    }
+]

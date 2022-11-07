@@ -1,0 +1,72 @@
+[
+  {
+    "brand": "Toshiba",
+    "serialNo": "12345",  
+    "type": "Scope B",
+    "model": "88888",
+    "nurse": "32154",
+    "shift": "Night",
+    "date": "02/11/2022",
+    "status": 1
+  },
+  {
+    "brand": "Panasonic",
+    "serialNo": "34567",
+    "type": "Scope E",
+    "model": "77777",
+    "nurse": "654654",
+    "shift": "Day",
+    "date": "02/11/2022",
+    "status": 1
+  },
+  {
+    "brand": "Logitech",
+    "serialNo": "00123",
+    "type": "Scope A",
+    "model": "66666",
+    "nurse": "894498",
+    "shift": "Night",
+    "date": "03/11/2022",
+    "status": 1
+  },
+  {
+    "brand": "Sony",
+    "serialNo": "00456",
+    "type": "Scope H",
+    "model": "33333",
+    "nurse": "32154",
+    "shift": "Day",
+    "date": "01/11/2022",
+    "status": 2
+  },
+  {
+    "brand": "Apple",
+    "serialNo": "00789",
+    "type": "Scope B",
+    "model": "99999",
+    "nurse": "22135",
+    "shift": "Night",
+    "date": "01/11/2022",
+    "status": 2
+  },
+  {
+    "brand": "Mitsubishi",
+    "serialNo": "09876",
+    "type": "Scope H",
+    "model": "33333",
+    "nurse": "32154",
+    "shift": "Day",
+    "date": "01/11/2022",
+    "status": 2
+  },
+  {
+    "brand": "Sharp",
+    "serialNo": "54321",
+    "type": "Scope B",
+    "model": "99999",
+    "nurse": "22135",
+    "shift": "Night",
+    "date": "02/11/2022",
+    "status": 3
+  }
+]

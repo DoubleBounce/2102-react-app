@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+import ScopeStatus from './status/ScopeStatus';
+import TodaySchedule from './schedule/TodaySchedule';
 
-function App() {
+//Styles
+import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+//External files
+import scopeData from "./db/scopes.json"
+import SampleScope from './sampling/SampleScope';
+import ScanScope from './sampling/ScanScope';
+
+// const staffDetailsContext = createContext()
+
+const App = () => {
+  useEffect(() => {
+    //Check if there is staff details in local storage. If no, initialise it. 
+    localStorage.getItem('staffDetails') == null
+      && localStorage.setItem("staffDetails", JSON.stringify({
+        staffId: "",
+        staffName: "",
+        assistantId: "",
+        assistantName: ""
+      }))
+
+    //Check if there is scanning details in local storage. If no, initialise it. 
+    localStorage.getItem('scanningDetails') == null
+      && localStorage.setItem("scanningDetails", JSON.stringify({
+        date: "",
+        time: "",
+        brand: "",
+        type: "",
+        model: "",
+        serialNo: ""
+      }))
+  }, [])
+
+  localStorage.setItem("scopes", JSON.stringify(scopeData))
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sample/employeedetails" element={<SampleScope />} />
+          <Route path="/sample/scanscope" element={<SampleScope />} />
+          <Route path="/sample/confirmation" element={<SampleScope />} />
+          <Route path="/schedule" element={<TodaySchedule />} />
+          <Route path="/status" element={<ScopeStatus />} />
+
+
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
-export default App;
+export default App
