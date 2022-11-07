@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 
-const SampleConfirmPopup = () => {
+const SampleConfirmPopup = ({serialNo}) => {
+  const scopes = JSON.parse(localStorage.getItem("scopes"))
+  const [clicked, setClicked] = useState(false)
 
-  const submitSampleScope = () => {
-
-  }
+  useEffect(() => {
+    // console.log(scopes, serialNo)
+      clicked && (scopes.map((scope) => scope.serialNo === serialNo && (scope.status = 2) ))
+      localStorage.setItem("scopes", JSON.stringify(scopes))
+  }, [clicked])
 
   return (
     <>
@@ -22,7 +26,7 @@ const SampleConfirmPopup = () => {
               <Button className="edit-button" variant="warning">Edit</Button>
             </Col>
             <Col>
-              <Button className="submit-button" variant="success" href="/sample/removeitems" onSubmit={() => {submitSampleScope()}}>Submit</Button>
+              <Button className="submit-button" variant="success" onClick={() => setClicked(true)} href="/sample/removeitems">Submit</Button>
             </Col>
           </Row>
         </Card.Body>

@@ -73,7 +73,7 @@ const SampleScope = () => {
           <Col className='left-container'>
             {
               window.location.pathname === "/sample/employeedetails" || window.location.pathname ==="/sample/confirmation"
-                ? <EmployeeDetails staffDetails={staffDetails} updateDetails={updateDetails} />
+                ? <EmployeeDetails staffDetails={staffDetails} scanningDetails={scanningDetails} updateDetails={updateDetails} />
                 : <ScanScopeInstructions />
             }
           </Col>

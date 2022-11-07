@@ -29,14 +29,17 @@ const App = () => {
       && localStorage.setItem("scanningDetails", JSON.stringify({
         date: "",
         time: "",
+        serialNo: "",
         brand: "",
         type: "",
-        model: "",
-        serialNo: ""
+        model: ""
       }))
+
+      localStorage.getItem("scopes") == null 
+      && localStorage.setItem("scopes", JSON.stringify(scopeData))
+
   }, [])
 
-  localStorage.setItem("scopes", JSON.stringify(scopeData))
 
   return (
     <Router>

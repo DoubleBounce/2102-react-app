@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Form } from 'react-bootstrap'
 import SampleConfirmPopup from './SampleConfirmPopup'
 
-const EmployeeDetails = ({staffDetails, updateDetails}) => {
+const EmployeeDetails = ({staffDetails, scanningDetails, updateDetails}) => {
   return (
     <>
       <h3>Employee Details</h3>
@@ -36,7 +36,7 @@ const EmployeeDetails = ({staffDetails, updateDetails}) => {
         </Form.Group>
       </Form>
       {
-        window.location.pathname === "/sample/confirmation" && <SampleConfirmPopup />
+        window.location.pathname === "/sample/confirmation" && <SampleConfirmPopup serialNo={scanningDetails.serialNo}/>
       }
     </>
   )

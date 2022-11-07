@@ -22,6 +22,13 @@ const ScopeDetails = ({ scanningDetails, updateScanningDetails, populateScanning
           </Form.Group>
         </Form>
         <Card.Title>Scope Details</Card.Title>
+        <Form.Group as={Row} className="mb-3" controlId="formSamplingDetailsTime">
+          <Form.Label column sm="4">Serial No.</Form.Label>
+          <Col sm="8">
+            <Form.Control value={scanningDetails.serialNo} className='serialNoInput' onChange={(e) => updateScanningDetails(e)} />
+          </Col>
+        </Form.Group>
+
         <Form>
           <Form.Group as={Row} className="mb-3" controlId="formSamplingDetailsDate">
             <Form.Label column sm="4">Brand</Form.Label>
@@ -44,16 +51,10 @@ const ScopeDetails = ({ scanningDetails, updateScanningDetails, populateScanning
             </Col>
           </Form.Group>
 
-          <Form.Group as={Row} className="mb-3" controlId="formSamplingDetailsTime">
-            <Form.Label column sm="4">Serial No.</Form.Label>
-            <Col sm="8">
-              <Form.Control value={scanningDetails.serialNo} className='serialNoInput' onChange={(e) => updateScanningDetails(e)} />
-            </Col>
-          </Form.Group>
           {
             window.location.pathname !== "/sample/confirmation" && <Button className="scope-placed-button" variant="success" href="/sample/confirmation" onClick={(e) => populateScanningDetails(e)}>Scope placed on station</Button>
           }
-          </Form>
+        </Form>
       </Card.Body>
     </>
   )
