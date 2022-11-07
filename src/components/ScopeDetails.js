@@ -51,9 +51,10 @@ const ScopeDetails = ({ scanningDetails, updateScanningDetails, populateScanning
               <Form.Control value={scanningDetails.serialNo} className='serialNoInput' onChange={(e) => updateScanningDetails(e)} />
             </Col>
           </Form.Group>
-
-          <Button className="scope-placed-button" variant="success" href="/sample/confirmation" onClick={(e) => populateScanningDetails(e)}>Scope placed on station</Button>
-        </Form>
+          {
+            window.location.pathname !== "/sample/confirmation" && <Button className="scope-placed-button" variant="success" href="/sample/confirmation" onClick={(e) => populateScanningDetails(e)}>Scope placed on station</Button>
+          }
+          </Form>
       </Card.Body>
     </>
   )

@@ -50,8 +50,6 @@ const App = () => {
           <Route path="/sample/confirmation" element={<SampleScope />} />
           <Route path="/schedule" element={<TodaySchedule />} />
           <Route path="/status" element={<ScopeStatus />} />
-
-
         </Routes>
       </div>
     </Router>
