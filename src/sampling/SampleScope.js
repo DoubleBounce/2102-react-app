@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Row, Col, Modal, Button } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 import NavigationBar from '../components/NavigationBar'
 import EmployeeDetails from '../components/EmployeeDetails'
@@ -71,16 +71,16 @@ const SampleScope = () => {
   return (
     <>
       <NavigationBar active="sample" title="Sample Scope" />
-      <Container>
-        <Row>
-          <Col className='left-container'>
+      <Container className="d-flex align-items-center">
+        <Row className="mt-auto mb-auto">
+          <Col className="left-container">
             {
               window.location.pathname === "/sample/employeedetails" || window.location.pathname === "/sample/confirmation"
                 ? <EmployeeDetails staffDetails={staffDetails} scanningDetails={scanningDetails} updateDetails={updateDetails} />
                 : <ScanScopeInstructions />
             }
           </Col>
-          <Col className='right-container'>
+          <Col className="right-container">
             {
               window.location.pathname === "/sample/employeedetails"
                 ? <ScanTagsInstructions staffDetails={staffDetails} populateStaffDetails={populateStaffDetails} />

@@ -5,7 +5,7 @@ import ScopeStatus from './status/ScopeStatus';
 import TodaySchedule from './schedule/TodaySchedule';
 
 //Styles
-import './App.css';
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //External files

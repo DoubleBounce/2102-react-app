@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import NavigationBar from '../components/NavigationBar'
 import { Container, Row, Col, Card, Form } from 'react-bootstrap'
+import MultiStepProgressBar from '../components/MultiStepProgressBar'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import "../components/styles/MultiStepProgressBar.css";
+import "react-step-progress-bar/styles.css";
 
 const ScopeStatus = (props) => {
   const [scopes, setScopes] = useState(JSON.parse(localStorage.getItem("scopes")))
@@ -23,6 +27,7 @@ const ScopeStatus = (props) => {
                 <Card key={scope.serialNo} bg={scopeShown.serialNo === scope.serialNo && "info"} border="dark" className="text-center mb-2" onClick={() => showScope(scope.serialNo)}>
                   <Card.Body>
                     <Card.Title>Serial No.: {scope.serialNo}</Card.Title>
+                    <MultiStepProgressBar currentStep={scope.status} />
                   </Card.Body>
                 </Card>
               ))
