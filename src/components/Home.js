@@ -11,7 +11,7 @@ const Home = () => {
         <Row className="mt-4 mb-4 d-flex align-items-center justify-content-center" id='home-dock-row'>
           <Col></Col>
           <Col md={5}>
-            <Card border="dark" className="text-center">
+            <Card border="dark" className="text-center pt-5 pb-5">
               <Card.Body>
                 <Card.Title>To start sampling a scope, DOCK tablet into station</Card.Title>
               </Card.Body>
@@ -21,10 +21,10 @@ const Home = () => {
         </Row>
         <Row>
           <Col className='text-center'>
-            <Button variant="success" href="/schedule">Scopes scheduled for Today</Button>
+            <Button size="lg" variant="success" href="/schedule">Scopes scheduled for Today</Button>
           </Col>
           <Col className='text-center'>
-            <Button variant="success" href="/status">Status of All Scopes</Button>
+            <Button size="lg" variant="success" href="/status">Status of All Scopes</Button>
           </Col>
         </Row>
       </Container>

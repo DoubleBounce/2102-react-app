@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Modal, Button } from 'react-bootstrap'
 
 import NavigationBar from '../components/NavigationBar'
 import EmployeeDetails from '../components/EmployeeDetails'
@@ -10,6 +10,9 @@ import ScanScopeInstructions from '../components/ScanScopeInstructions'
 const SampleScope = () => {
   const [staffDetails, setDetails] = useState(JSON.parse(localStorage.getItem('staffDetails')))
   const [scanningDetails, setScanningDetails] = useState(JSON.parse(localStorage.getItem('scanningDetails')))
+
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   const populateStaffDetails = (evt) => {
     evt.target.classList[0] === "staff-button" && setDetails({ ...staffDetails, staffId: "S1234", staffName: "Ryan Lim" })
@@ -34,18 +37,18 @@ const SampleScope = () => {
     const formattedDate = date + "/" + month + "/" + year
     const formattedTime = hour + ":" + min + ":" + sec + " (24 hour)"
 
-    evt.target.classList[0] === "scope-placed-button" 
-    && (
-      setScanningDetails({ 
-      ...scanningDetails, 
-      date: formattedDate, 
-      time: formattedTime,
-      brand: "Toshiba",
-      type: "Scope B",
-      model: "88888",
-      serialNo: "12345",
-    })
-    )
+    evt.target.classList[0] === "scope-placed-button"
+      && (
+        setScanningDetails({
+          ...scanningDetails,
+          date: formattedDate,
+          time: formattedTime,
+          brand: "Toshiba",
+          type: "Scope B",
+          model: "88888",
+          serialNo: "12345",
+        })
+      )
   }
   const updateScanningDetails = (evt) => {
     const updatedValue = evt.target.classList.value
@@ -72,7 +75,7 @@ const SampleScope = () => {
         <Row>
           <Col className='left-container'>
             {
-              window.location.pathname === "/sample/employeedetails" || window.location.pathname ==="/sample/confirmation"
+              window.location.pathname === "/sample/employeedetails" || window.location.pathname === "/sample/confirmation"
                 ? <EmployeeDetails staffDetails={staffDetails} scanningDetails={scanningDetails} updateDetails={updateDetails} />
                 : <ScanScopeInstructions />
             }

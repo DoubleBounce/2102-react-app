@@ -36,7 +36,7 @@ const EmployeeDetails = ({staffDetails, scanningDetails, updateDetails}) => {
         </Form.Group>
       </Form>
       {
-        window.location.pathname === "/sample/confirmation" && <SampleConfirmPopup serialNo={scanningDetails.serialNo}/>
+        window.location.pathname === "/sample/confirmation" && <SampleConfirmPopup serialNo={scanningDetails.serialNo} />
       }
     </>
   )

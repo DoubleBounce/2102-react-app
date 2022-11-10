@@ -15,7 +15,7 @@ import RemoveItemsPage from './sampling/RemoveItemsPage';
 
 const App = () => {
   useEffect(() => {
-    //Check if there is staff details in local storage. If no, initialise it. 
+    // Check if there is staff details in local storage. If no, initialise it. 
     localStorage.getItem('staffDetails') == null
       && localStorage.setItem("staffDetails", JSON.stringify({
         staffId: "",
@@ -24,7 +24,7 @@ const App = () => {
         assistantName: ""
       }))
 
-    //Check if there is scanning details in local storage. If no, initialise it. 
+    // Check if there is scanning details in local storage. If no, initialise it. 
     localStorage.getItem('scanningDetails') == null
       && localStorage.setItem("scanningDetails", JSON.stringify({
         date: "",
@@ -34,9 +34,10 @@ const App = () => {
         type: "",
         model: ""
       }))
-
-      localStorage.getItem("scopes") == null 
-      && localStorage.setItem("scopes", JSON.stringify(scopeData))
+      
+    // Check if there is scopes information in local storage. If no, initialise it.
+    localStorage.getItem("scopes") == null 
+    && localStorage.setItem("scopes", JSON.stringify(scopeData))
 
   }, [])
 
