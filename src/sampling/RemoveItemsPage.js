@@ -1,27 +1,31 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Col, Container, Row, Button, Modal } from 'react-bootstrap'
-import history from 'react-router-dom'
 import NavigationBar from '../components/NavigationBar'
 
 const RemoveItemsPage = () => {
   const [showModal, setShowModal] = useState(false)
-  const [timeleft, setTimeLeft] = useState(5)
+  const [timeleft, setTimeLeft] = useState(null)
   const handleClose = () => setShowModal(false)
   const handleShow = () => setShowModal(true)
 
   useEffect(() => {
+    if (timeleft === 5 && showModal === false) {
+      return;
+    }
+
     if(timeleft===0) {
       setTimeLeft(null)
       handleClose()
       window.location.href = "/";
    }
-   // exit early when we reach 0
-   if (!timeleft) return;
+  //  // exit early when we reach 0
+  //  if (!timeleft) return;
 
     const intervalId = setInterval(() => {
       setTimeLeft(timeleft - 1);
     }, 1000);
     return () => clearInterval(intervalId);
+
   }, [timeleft])
   
   return (
@@ -44,7 +48,7 @@ const RemoveItemsPage = () => {
         </Row>
         <Row>
           <Col className='text-center'>
-            <Button className="items-removed-button" variant="success" onClick={() => {setShowModal(true); setTimeLeft(5)}}>Items removed</Button>
+            <Button className="items-removed-button" variant="success" onClick={() => {handleShow(); setTimeLeft(5)}}>Items removed</Button>
           </Col>
         </Row>
         {
