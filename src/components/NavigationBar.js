@@ -1,8 +1,7 @@
 import React from 'react'
-import { Nav, Navbar, Container, Row, Col } from 'react-bootstrap'
+import { Nav, Navbar, Row, Col } from 'react-bootstrap'
 
 const NavigationBar = (props) => {
-
   return (
     <>
       <Navbar bg='light'>
@@ -28,13 +27,17 @@ const NavigationBar = (props) => {
                 : <Nav.Link href='/schedule' eventKey="schedule"> Schedule </Nav.Link>
             }
           </Nav.Item>
-          <Nav.Item>
-            {
-              props.active === "status"
-                ? <Nav.Link href='/status' eventKey="status" active> Status </Nav.Link>
-                : <Nav.Link href='/status' eventKey="status"> Status </Nav.Link>
-            }
-          </Nav.Item>
+          {
+            process.env.REACT_APP_ENVIRONMENT === "dev" &&
+            <Nav.Item>
+              {
+                props.active === "status"
+                  ? <Nav.Link href='/status' eventKey="status" active> Status </Nav.Link>
+                  : <Nav.Link href='/status' eventKey="status"> Status </Nav.Link>
+              }
+            </Nav.Item>
+          }
+
         </Nav >
       </Navbar>
       {/* <Container> */}
